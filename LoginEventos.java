@@ -14,6 +14,14 @@ public class LoginEventos {
         Teladeacesso tela = new Teladeacesso();
             tela.setVisible(true);
     }
+
+    public Object getjTextFieldLogin() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Object getjPassawordFieldSenha() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 
 }

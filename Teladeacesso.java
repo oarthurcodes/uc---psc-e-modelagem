@@ -4,7 +4,9 @@
  */
 package com.mycompany.logineventos;
 
+import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
 
 /**
  *
@@ -35,8 +37,8 @@ public class Teladeacesso extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        loginTextField = new javax.swing.JFormattedTextField();
-        senhaPasswordField = new javax.swing.JPasswordField();
+        jTextFieldLogin = new javax.swing.JFormattedTextField();
+        jPasswordFieldSenha = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         loginButton = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
@@ -74,7 +76,6 @@ public class Teladeacesso extends javax.swing.JFrame {
         jLabel6.setText("Ainda não tem acesso?  Cadastre-se!");
         jPanel5.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, 290, -1));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\DanieleAparecidadeMe\\Pictures\\logotipo.png")); // NOI18N
         jLabel4.setText("jLabel4");
         jPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 405, 460));
 
@@ -87,16 +88,16 @@ public class Teladeacesso extends javax.swing.JFrame {
         jLabel2.setAlignmentY(0.7F);
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 215, 138, 29));
 
-        loginTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Digite seu login:"));
-        loginTextField.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldLogin.setBorder(javax.swing.BorderFactory.createTitledBorder("Digite seu login:"));
+        jTextFieldLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginTextFieldActionPerformed(evt);
+                jTextFieldLoginActionPerformed(evt);
             }
         });
-        jPanel2.add(loginTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 221, 40));
+        jPanel2.add(jTextFieldLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 221, 40));
 
-        senhaPasswordField.setBorder(javax.swing.BorderFactory.createTitledBorder("Digite sua senha:"));
-        jPanel2.add(senhaPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 221, 40));
+        jPasswordFieldSenha.setBorder(javax.swing.BorderFactory.createTitledBorder("Digite sua senha:"));
+        jPanel2.add(jPasswordFieldSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 221, 40));
 
         jLabel3.setFont(new java.awt.Font("Gill Sans MT", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -127,8 +128,6 @@ public class Teladeacesso extends javax.swing.JFrame {
         );
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 38, -1, -1));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\DanieleAparecidadeMe\\Pictures\\perfilajustado.png")); // NOI18N
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, -1, 175));
 
         sairButton.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
@@ -157,9 +156,9 @@ public class Teladeacesso extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void loginTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginTextFieldActionPerformed
+    private void jTextFieldLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldLoginActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_loginTextFieldActionPerformed
+    }//GEN-LAST:event_jTextFieldLoginActionPerformed
 
     private void jButtonRealizarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRealizarCadastroActionPerformed
         CadastroEventos telaDeCadastro = new CadastroEventos();
@@ -171,14 +170,39 @@ public class Teladeacesso extends javax.swing.JFrame {
     }//GEN-LAST:event_sairButtonActionPerformed
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-    String login = loginTextField.getText();
-    String senha = new String (senhaPasswordField.getPassword());
-        if(login.equals("admin")&&senha.equals("admin"))
-            JOptionPane.showMessageDialog(null,"Bem vindo!");
-        else
-            JOptionPane.showMessageDialog(null,"Usuário inválido");
+    String login = jTextFieldLogin.getText();
+    String senha = new String (jPasswordFieldSenha.getPassword());
+        if(login.equals("admin@gmail.com")&&senha.equals("adminn")){
+        
+        Eventos f = new Eventos();
+        this.dispose();
+        f.setVisible(true);
+        
+        }else{JOptionPane.showMessageDialog(null,"Usuário inválido");
+        
+        }
+            
     }//GEN-LAST:event_loginButtonActionPerformed
 
+    public JPasswordField getjPasswordFieldSenha() {
+        return jPasswordFieldSenha;
+    }
+
+    public void setjPasswordFieldSenha(JPasswordField jPasswordFieldSenha) {
+        this.jPasswordFieldSenha = jPasswordFieldSenha;
+    }
+
+    public JFormattedTextField getjTextFieldLogin() {
+        return jTextFieldLogin;
+    }
+
+    public void setjTextFieldLogin(JFormattedTextField jTextFieldLogin) {
+        this.jTextFieldLogin = jTextFieldLogin;
+    }
+
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -225,9 +249,9 @@ public class Teladeacesso extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPasswordField jPasswordFieldSenha;
+    private javax.swing.JFormattedTextField jTextFieldLogin;
     private javax.swing.JButton loginButton;
-    private javax.swing.JFormattedTextField loginTextField;
     private javax.swing.JButton sairButton;
-    private javax.swing.JPasswordField senhaPasswordField;
     // End of variables declaration//GEN-END:variables
 }
